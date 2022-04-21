@@ -27,5 +27,3 @@ pnpm-debug.log*
 *.png
 *.jpg
 *.mp4
-
-/public/unity
