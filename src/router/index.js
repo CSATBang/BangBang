@@ -11,6 +11,11 @@ const routes = [
         name: 'purpose',
         component: () => import('@/views/Purpose.vue'),
     },
+    {
+        path:'/principle',
+        name:'princeple',
+        component: () => import('@/views/principle.vue'),
+    },
 ];
 
 const router = createRouter({
