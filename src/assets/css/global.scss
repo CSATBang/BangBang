@@ -1,0 +1,180 @@
+:root {
+    --vsc-background: linear-gradient(125deg, #808080, #3fada8, #808080);
+}
+
+body {
+    margin: 0;
+}
+
+svg {
+    width: 16px;
+    height: 16px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+//hr 效果 https://www.zhangxinxu.com/wordpress/2021/05/css-html-hr/
+hr {
+    border: 0;
+    padding: 1px;
+    margin: 20px 0;
+    background: linear-gradient(135deg, red, orange, #0dd5a0, #bf00ff, purple);
+    //--mask-image: repeating-linear-gradient(135deg, #000 0px, #000 1px, transparent 1px, transparent 6px);
+    //-webkit-mask-image: var(--mask-image);
+    //mask-image: var(--mask-image);
+}
+
+button {
+    padding: 6px 15px;
+    border: 0;
+    border-radius: 12%;
+    //background: linear-gradient(25deg, #24f5e0, #31bff7);
+    background-color: #24f5e0;
+    transition: all 0.2s;
+
+    &:hover {
+        cursor: pointer;
+        //background: linear-gradient(25deg, #f5bd24, #f77331);
+        background-color: #fc813a;
+    }
+}
+
+.screen-full {
+    width: 100%;
+    height: 100vh;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-layout {
+    @extend .flex-center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.default-border {
+    border: 2px solid #FFF;
+    border-radius: 20px;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+
+    &:before {
+        content: "";
+        z-index: -10;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--vsc-background);
+    }
+}
+
+.home-list {
+    li {
+        @extend .default-border;
+        padding: 16px 60px;
+        margin: 20px;
+        transition: all 0.2s;
+
+        &:hover {
+            cursor: pointer;
+            border-color: aqua;
+            color: aqua;
+        }
+    }
+}
+
+.goto-home {
+    @extend .default-border;
+    position: fixed;
+    left: 20px;
+    top: calc(50%);
+    writing-mode: tb-rl; //文字竖着
+    border-radius: 10px;
+    padding: 10px 4px;
+    color: #FFFFFF;
+    transition: all 0.2s;
+
+    &:hover {
+        cursor: pointer;
+        color: aqua;
+        border-color: aqua;
+    }
+}
+
+.default-text {
+    text-indent: 2em;
+    line-height: 2;
+    font-size: 1.3rem;
+    white-space: pre-line; //识别\n换行
+}
+
+.text-content {
+    width: 56%;
+    min-height: 56vh;
+    padding: 20px;
+    margin: 80px 40px;
+}
+
+.default-text-content {
+    @extend .default-text;
+    @extend .text-content;
+    @extend .default-border
+}
+
+
+.right-position {
+    position: absolute;
+    right: 20px;
+}
+
+.mathJaxFont {
+    font-size: 18px;
+    margin: 16px;
+    width: max-content;
+
+    .MJXc-display {
+        text-align: left !important;
+    }
+}
+
+.question {
+    line-height: 2;
+    font-size: 1.1rem;
+    padding: 6px;
+    text-align: left;
+}
+
+.answer {
+    width: 100%;
+    margin: 0 0 20px;
+
+    li {
+        margin: 10px 0;
+    }
+}
+
+.submit-answer {
+    margin: -40px 0 60px;
+    font-size: 1.0rem;
+    color: #FFF;
+}
+
+.simulation-iframe{
+    width: 80%;
+    height: 80vh;
+    border: 0;
+    background: #24f5e0;
+}
