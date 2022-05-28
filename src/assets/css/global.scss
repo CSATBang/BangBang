@@ -178,3 +178,15 @@ button {
     border: 0;
     background: #24f5e0;
 }
+
+.word{
+    .docx-wrapper{
+        background: none;
+    }
+}
+
+.word-export{
+    position: fixed;
+    top: calc(50vh - 30px);
+    right: 20px;
+}

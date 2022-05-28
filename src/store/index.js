@@ -5,11 +5,13 @@ let store = createStore({
         //题目集合
         topics: [],
         //显示实验
-        showEXP: true,
+        showEXP: false,
         //显示“数据处理”
         showData: false,
         //显示结果
         showResult: false,
+        //得分
+        score: 0,
     },
     getters: {
         GetRandomTopic: state => function () {
@@ -41,6 +43,9 @@ let store = createStore({
         },
         setShowResult(state, bShow) {
             state.showResult = bShow;
+        },
+        setScore(state, score){
+            state.score = score;
         },
     },
     actions: {},
