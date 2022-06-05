@@ -12,8 +12,6 @@
 
 <script>
 //实验结果
-import preview from "docx-preview";
-import store from "@/store";
 
 export default {
     name: "Result",
@@ -100,11 +98,7 @@ export default {
                 let level = this.GetLevel(score);
                 template = this.template2[level];
             }
-            let baeUrl = process.env.BASE_URL;
-            if (baeUrl.trim().length <= 0) {
-                baeUrl = "http://localhost:8080";
-            }
-            let XML = this.NewHttpRequest(`${baeUrl}/${template}`);
+            let XML = this.NewHttpRequest(`${window.baseUrl}/${template}`);
             XML.onload = result => {
                 data = result.target.response;
                 this.preview.renderAsync(data, document.getElementById(id), null, options)
